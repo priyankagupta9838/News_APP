@@ -6,8 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 import '../favorite.dart';
 
 class DetailNews extends StatefulWidget {
-  DetailNews({super.key, required this.imagepath});
+
+
+  DetailNews({super.key, required this.imagepath,required this.content,required this.title});
   String imagepath;
+  String content;
+  String title;
 
   @override
   State<DetailNews> createState() => _DetailNewsState();
@@ -39,7 +43,7 @@ class _DetailNewsState extends State<DetailNews> {
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(top: size.height * 0.05),
-                      child: Container(
+                      child: SizedBox(
                         height: size.height * 0.05,
 
                         child: Row(
@@ -62,7 +66,7 @@ class _DetailNewsState extends State<DetailNews> {
                   Padding(
                     padding:  EdgeInsets.only(top: size.height*0.46),
                     child: Container(
-                      height: size.height*0.6  ,
+
                       width: size.width*1,
                       padding: EdgeInsets.all(size.height*0.02),
                       decoration:BoxDecoration(
@@ -78,19 +82,11 @@ class _DetailNewsState extends State<DetailNews> {
                           SizedBox(
                             height: size.height*0.13,
                           ),
-                          Row(
-                            children: [
-                              AutoSizeText("What is Flutter used for? ",style: GoogleFonts.openSans(
-                                fontSize: size.height*0.02,fontWeight: FontWeight.w600,
 
-                              ),),
-                              AutoSizeText(" Flutter is ",style: GoogleFonts.openSans(
-                              fontSize: size.height*0.02,fontWeight: FontWeight.w400,
-
-                              ),),
-                              ],
-                          ),
-                          AutoSizeText("designed to support mobile apps that run on both Android and iOS, as well as interactive apps that you want to run on your web pages or on the desktop. Apps that need to deliver highly branded designs are particularly well suited for Flutter.",style: GoogleFonts.openSans(
+                          AutoSizeText(
+                            widget.content
+                            ,
+                            style: GoogleFonts.openSans(
                           fontSize: size.height*0.02,fontWeight: FontWeight.w500,
 
                           ),)
@@ -116,20 +112,23 @@ class _DetailNewsState extends State<DetailNews> {
 
                       child: Column(
                         children: [
-                          Row(
-                            children: [
-                              AutoSizeText("What is Flutter used for?",style: GoogleFonts.openSans(
-                                fontSize: size.height*0.02,fontWeight: FontWeight.w600,
-
-                              ),),
-                              AutoSizeText(" Flutter is  ",style: GoogleFonts.openSans(
-                                fontSize: size.height*0.02,fontWeight: FontWeight.w400,
-
-                              ),),
-                            ],
-                          ),
-                          AutoSizeText("designed support mobile apps that run on both Android and iOS, as well as interactive apps that you want to run on your web pages or on the desktop. Apps that need to.",style: GoogleFonts.openSans(
-                            fontSize: size.height*0.02,fontWeight: FontWeight.w400,
+                          // Row(
+                          //   children: [
+                          //     AutoSizeText("What is Flutter used for?",style: GoogleFonts.openSans(
+                          //       fontSize: size.height*0.02,fontWeight: FontWeight.w600,
+                          //
+                          //     ),),
+                          //     AutoSizeText(" Flutter is  ",style: GoogleFonts.openSans(
+                          //       fontSize: size.height*0.02,fontWeight: FontWeight.w400,
+                          //
+                          //     ),),
+                          //   ],
+                          // ),
+                          AutoSizeText(
+                        widget.title
+                            ,
+                            style: GoogleFonts.openSans(
+                            fontSize: size.height*0.02,fontWeight: FontWeight.w600,
 
                           ),)
 
